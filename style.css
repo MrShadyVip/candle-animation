@@ -1,10 +1,6 @@
-/* ---------- Original Candle Animation (unchanged) ---------- */
 body {
   background-color: #FFF;
   animation: change-background 3s infinite linear;
-  margin: 0;
-  min-height: 100vh;
-  position: relative;
 }
 
 .wrapper {
@@ -34,6 +30,11 @@ body {
   height: 150px;
   transform: translate(-50%, -100%);
   z-index: 1;
+}
+
+/* make candles clickable */
+.candle1, .candle2 {
+  cursor: pointer;
 }
 
 .candle1 {
@@ -210,7 +211,7 @@ body {
   animation: dance-fire 3s infinite linear;
 }
 
-/* Keyframes (unchanged) */
+/* ========== KEYFRAMES (unchanged) ========== */
 @keyframes blink-eyes {
   0%,35% { opacity: 1; transform: translate(-70%, 0%); }
   36%,39% { opacity: 0; transform: translate(-70%, 0%); }
@@ -290,111 +291,4 @@ body {
 @keyframes changeto-greater {
   0%,70%,90% { top: 50%; padding: 0px; display: inline-block; border-radius: 100%; background: #673C63; border-width: 0 0 0 0; border: 0px solid #673C63; transform: translate(-80%, 0%); }
   71%,89% { top: 30%; background: none; border: solid #673C63; border-radius: 0px; border-width: 0 2px 2px 0; display: inline-block; padding: 1px; float: left; transform-origin: bottom left; transform: rotate(135deg) translate(-80%, 20%); -webkit-transform: rotate(135deg) translate(-80%, 20%); }
-}
-
-/* ---------- New Copyright (AgentSyCode) at Top Center ---------- */
-.copyright-top {
-  position: fixed;
-  top: 30px;
-  left: 0;
-  right: 0;
-  text-align: center;
-  z-index: 100;
-  pointer-events: none; /* allow click-through if needed */
-}
-
-.main {
-  display: inline-flex;
-  justify-content: center;
-  align-items: flex-start;
-  pointer-events: auto;
-  /* original styling from provided CSS, adapted */
-}
-
-/* Span styling as per request (with animation) */
-.main span {
-  margin: 0 15px;
-  line-height: 0.7;
-  font-size: 42px;
-  font-weight: bold;
-  font-family: 'Quicksand', 'Segoe UI', sans-serif;
-  text-shadow: 0 0 2px rgba(0, 0, 0, 0.45);
-  animation: span 3s ease-in infinite alternate;
-  color: #FFE0B5; /* to stand out against dark/light background */
-}
-
-.letter {
-  display: inline-flex;
-  height: 30px;
-  width: 27px;
-  border: 2.35px solid black;
-  border-radius: 14px;
-  box-shadow: 0 0 2px rgba(0, 0, 0, 0.75), inset 0 0 2px rgba(0, 0, 0, 0.45);
-  animation: letter 3s ease-in-out infinite alternate;
-  background: rgba(0,0,0,0.2); /* slight visibility */
-}
-
-/* Keyframes from provided CSS */
-@keyframes span {
-  0%,30% { margin: 0 15px; }
-  70%,100% { margin: 0 5px; }
-}
-@keyframes letter {
-  0%,30% { width: 27px; }
-  70%,100% { width: 30vw; }
-}
-
-/* Responsive adjustment for copyright */
-@media (max-width: 600px) {
-  .main {
-    transform: scale(0.65);
-  }
-  .main span {
-    font-size: 28px;
-  }
-  .copyright-top {
-    top: 15px;
-  }
-}
-
-/* ---------- Telegram Link (text only) at Bottom Center ---------- */
-.telegram-link {
-  position: fixed;
-  bottom: 20px;
-  left: 0;
-  right: 0;
-  text-align: center;
-  z-index: 100;
-  font-family: 'Quicksand', 'Segoe UI', sans-serif;
-  font-size: 16px;
-  font-weight: 500;
-}
-
-.telegram-link a {
-  color: #FF8C42;
-  text-decoration: none;
-  background: rgba(0,0,0,0.5);
-  padding: 8px 16px;
-  border-radius: 30px;
-  transition: all 0.3s ease;
-  backdrop-filter: blur(4px);
-  border: 1px solid rgba(255,140,66,0.5);
-}
-
-.telegram-link a:hover {
-  color: #FFB347;
-  background: rgba(0,0,0,0.7);
-  border-color: #FFB347;
-  transform: scale(1.02);
-  display: inline-block;
-}
-
-@media (max-width: 600px) {
-  .telegram-link {
-    bottom: 15px;
-    font-size: 14px;
-  }
-  .telegram-link a {
-    padding: 6px 12px;
-  }
 }
