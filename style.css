@@ -1,4 +1,4 @@
-/* ---------- Original Candle Animation ---------- */
+/* ---------- Original Candle Animation (unchanged) ---------- */
 body {
   background-color: #FFF;
   animation: change-background 3s infinite linear;
@@ -210,7 +210,7 @@ body {
   animation: dance-fire 3s infinite linear;
 }
 
-/* Keyframes */
+/* Keyframes (unchanged) */
 @keyframes blink-eyes {
   0%,35% { opacity: 1; transform: translate(-70%, 0%); }
   36%,39% { opacity: 0; transform: translate(-70%, 0%); }
@@ -292,7 +292,7 @@ body {
   71%,89% { top: 30%; background: none; border: solid #673C63; border-radius: 0px; border-width: 0 2px 2px 0; display: inline-block; padding: 1px; float: left; transform-origin: bottom left; transform: rotate(135deg) translate(-80%, 20%); -webkit-transform: rotate(135deg) translate(-80%, 20%); }
 }
 
-/* ---------- Copyright (AgentSyCode) ---------- */
+/* ---------- Copyright (AgentSyCode) - NO SHADOW ---------- */
 .copyright {
   position: fixed;
   bottom: 20px;
@@ -300,18 +300,17 @@ body {
   right: 0;
   text-align: center;
   z-index: 100;
-  pointer-events: none;
+  pointer-events: none; /* allow click-through to button if needed */
 }
 
 .main {
   display: inline-flex;
   justify-content: center;
   align-items: flex-start;
-  background: rgba(0,0,0,0.4);
-  backdrop-filter: blur(4px);
+  /* removed background, backdrop-filter, box-shadow */
+  background: transparent;
   padding: 8px 20px;
   border-radius: 60px;
-  box-shadow: 0 4px 15px rgba(0,0,0,0.2);
   pointer-events: auto;
 }
 
@@ -342,17 +341,23 @@ body {
   70%,100% { margin: 0 6px; text-shadow: 0 0 12px #FF9800; color: #FFF5E6; }
 }
 
-/* ---------- Telegram Button ---------- */
+@keyframes letterPulse {
+  0%,30% { width: 30px; border-color: #FFB347; box-shadow: 0 0 6px #FFB347; }
+  70%,100% { width: 65px; border-color: #FF7E05; box-shadow: 0 0 15px #FF7E05; background: rgba(255,126,5,0.3); }
+}
+
+/* ---------- Telegram Button - Centered at Bottom ---------- */
 .telegram-btn {
   position: fixed;
   bottom: 20px;
-  right: 20px;
+  left: 50%;
+  transform: translateX(-50%);
   z-index: 100;
-  background: linear-gradient(135deg, #2AABEE, #0088cc);
+  background: linear-gradient(135deg, #FF8C42, #E67E22);
   color: white;
   border: none;
   border-radius: 50px;
-  padding: 12px 24px;
+  padding: 10px 24px;
   font-family: 'Quicksand', 'Segoe UI', sans-serif;
   font-weight: bold;
   font-size: 16px;
@@ -360,26 +365,26 @@ body {
   display: flex;
   align-items: center;
   gap: 10px;
-  box-shadow: 0 8px 20px rgba(0,0,0,0.3);
+  box-shadow: 0 4px 12px rgba(0,0,0,0.3);
   transition: transform 0.2s, box-shadow 0.2s;
   text-decoration: none;
   backdrop-filter: blur(2px);
-  border: 1px solid rgba(255,255,255,0.3);
+  border: 1px solid rgba(255,255,255,0.4);
 }
 
 .telegram-btn:hover {
-  transform: scale(1.05);
-  box-shadow: 0 12px 28px rgba(0,0,0,0.4);
-  background: linear-gradient(135deg, #3fb8ff, #0099e6);
+  transform: translateX(-50%) scale(1.05);
+  box-shadow: 0 8px 20px rgba(0,0,0,0.4);
+  background: linear-gradient(135deg, #FF9F4A, #F57C00);
 }
 
 .telegram-btn:active {
-  transform: scale(0.98);
+  transform: translateX(-50%) scale(0.98);
 }
 
 .telegram-btn svg {
-  width: 22px;
-  height: 22px;
+  width: 20px;
+  height: 20px;
   fill: white;
 }
 
@@ -387,6 +392,6 @@ body {
 @media (max-width: 600px) {
   .main { transform: scale(0.8); padding: 4px 12px; }
   .main span { font-size: 24px; margin: 0 8px; }
-  .telegram-btn { padding: 8px 16px; font-size: 14px; bottom: 15px; right: 15px; }
+  .telegram-btn { padding: 6px 16px; font-size: 14px; bottom: 15px; }
   .copyright { bottom: 15px; }
 }
