@@ -337,9 +337,9 @@ body {
   background: rgba(255,180,70,0.15);
 }
 
-@keyframes letterPulse {
-  0%,30% { width: 30px; border-color: #FFB347; box-shadow: 0 0 6px #FFB347; }
-  70%,100% { width: 65px; border-color: #FF7E05; box-shadow: 0 0 15px #FF7E05; background: rgba(255,126,5,0.3); }
+@keyframes spanGlow {
+  0%,30% { margin: 0 12px; text-shadow: 0 0 2px #FFB347; color: #FFE0B5; }
+  70%,100% { margin: 0 6px; text-shadow: 0 0 12px #FF9800; color: #FFF5E6; }
 }
 
 /* ---------- Telegram Button ---------- */
