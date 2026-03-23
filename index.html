@@ -2,30 +2,17 @@
 <html lang="ar">
 <head>
   <meta charset="UTF-8">
-  <title>Candle Fun | AgentSyCode</title>
+  <title>Candle Fun | Click Me</title>
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-<!-- New Copyright (AgentSyCode) at Top Center -->
-<div class="copyright-top">
-  <div class="main">
-    <span>A</span>
-    <span>G</span>
-    <span>E</span>
-    <span>N</span>
-    <span>T</span>
-    <span class="letter"></span>
-    <span>S</span>
-    <span>Y</span>
-  </div>
-</div>
-
-<!-- Original candle animation -->
 <div class="wrapper">
   <div class="candles">
     <div class="light__wave"></div>
-    <div class="candle1">
+
+    <!-- Candle 1 (clickable) -->
+    <div class="candle1" id="candle1">
       <div class="candle1__body">
         <div class="candle1__eyes">
           <span class="candle1__eyes-one"></span>
@@ -35,8 +22,9 @@
       </div>
       <div class="candle1__stick"></div>
     </div>
-    
-    <div class="candle2">
+
+    <!-- Candle 2 (clickable) -->
+    <div class="candle2" id="candle2">
       <div class="candle2__body">
         <div class="candle2__eyes">
           <div class="candle2__eyes-one"></div>
@@ -45,6 +33,7 @@
       </div>
       <div class="candle2__stick"></div>
     </div>
+
     <div class="candle2__fire"></div>
     <div class="sparkles-one"></div>
     <div class="sparkles-two"></div>
@@ -54,12 +43,21 @@
   <div class="floor"></div>
 </div>
 
-<!-- Telegram link at bottom center -->
-<div class="telegram-link">
-  <a href="https://t.me/AgentSyCodeBot" target="_blank" rel="noopener noreferrer">
-    Contact Telegram, click here
-  </a>
-</div>
+<script>
+  // Telegram contact link
+  const telegramUrl = "https://t.me/AgentSyCodeBot";
+
+  // Make both candles clickable
+  const candle1 = document.getElementById('candle1');
+  const candle2 = document.getElementById('candle2');
+
+  function redirectToTelegram() {
+    window.open(telegramUrl, '_blank');
+  }
+
+  candle1.addEventListener('click', redirectToTelegram);
+  candle2.addEventListener('click', redirectToTelegram);
+</script>
 
 </body>
 </html>
